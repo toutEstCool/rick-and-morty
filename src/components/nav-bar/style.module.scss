@@ -15,7 +15,11 @@
 				@apply h-[32px] w-[1.5px] bg-[#3C3C3C];
 			}
 			.inputWrapper {
-				@apply flex justify-between items-center pt-3 pb-3 pr-4 pl-3 min-w-[390px] w-full h-full bg-[#232323]  rounded-[8px];
+				@apply hidden sm:flex justify-between items-center pt-3 pb-3 pr-4 pl-3 min-w-[390px] w-full h-full bg-[#232323]  rounded-[8px] duration-300;
+
+				&:hover {
+					box-shadow: 1px 1px 3px #8b5cf6;
+				}
 
 				input {
 					@apply w-full  border-none outline-none bg-transparent pl-3;

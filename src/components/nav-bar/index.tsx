@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom'
 import { WiDaySunny } from 'react-icons/wi'
-import { RiMoonFill } from 'react-icons/ri'
+import { RxHamburgerMenu } from 'react-icons/rx'
 import { IoHomeOutline } from 'react-icons/io5'
 import style from './style.module.scss'
 import { RiSearchLine } from 'react-icons/ri'
+import { useState } from 'react'
+import { AuthPopUpComponent } from '../auth-pop-up'
 
 export const NavBarComponent = () => {
+	const [isPopUpMenu, setIsPopUpMenu] = useState(false)
+
 	return (
 		<nav className={style.rootNavBar}>
 			<div className={style.navContainer}>
@@ -22,6 +26,11 @@ export const NavBarComponent = () => {
 						<RiSearchLine />
 						<input type='text' placeholder='Search' />
 					</div>
+					<RxHamburgerMenu
+						size={23}
+						onClick={() => setIsPopUpMenu(!isPopUpMenu)}
+					/>
+					{isPopUpMenu && <AuthPopUpComponent />}
 				</div>
 			</div>
 		</nav>

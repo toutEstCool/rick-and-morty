@@ -1,0 +1,10 @@
+.rootPopUp {
+	@apply absolute top-20 right-2  bg-[#232323] p-3 rounded-lg flex flex-col justify-center items-center animate-bounce;
+	&:hover {
+		box-shadow: 1px 1px 3px #8b5cf6;
+	}
+
+	li {
+		@apply mb-2;
+	}
+}
