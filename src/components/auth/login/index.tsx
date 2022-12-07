@@ -1,3 +1,8 @@
-export const LoginComponent = (): JSX.Element => {
-	return <h1>Login</h1>
+export const LoginComponent = (props: any): JSX.Element => {
+	return (
+		<button type='submit'>
+			<input />
+			<input />
+		</button>
+	)
 }
