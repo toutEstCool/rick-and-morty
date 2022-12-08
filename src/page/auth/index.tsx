@@ -4,6 +4,8 @@ import { LoginComponent } from '../../components/auth/login'
 import { RegisterComponent } from '../../components/auth/register'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { authLoginData } from '../../common/types'
+import { toast } from 'react-toastify'
+import style from './style.module.scss'
 export const AuthRootComponent = (): JSX.Element => {
 	const location = useLocation()
 	const navigate = useNavigate()
@@ -27,9 +29,8 @@ export const AuthRootComponent = (): JSX.Element => {
 					email,
 					password
 				)
-				console.log(userCredential)
-
 				if (userCredential.user) {
+					toast(`Welcome, ${userCredential.user.email}`)
 					navigate('/')
 				}
 			} catch (error) {
@@ -39,7 +40,7 @@ export const AuthRootComponent = (): JSX.Element => {
 	}
 	return (
 		<>
-			<div>
+			<div className={style.authRoot}>
 				<form onSubmit={handleSubmitForm}>
 					{location.pathname === '/register' ? (
 						<RegisterComponent />

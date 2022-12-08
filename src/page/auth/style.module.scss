@@ -1,0 +1,7 @@
+.authRoot {
+	@apply flex flex-col items-center max-w-[600px] h-[100vh] w-full justify-center m-auto p-5 rounded-lg;
+
+	form {
+		@apply flex flex-col w-full gap-5;
+	}
+}
