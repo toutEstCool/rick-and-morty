@@ -8,6 +8,7 @@ import {
 export interface authLoginData {
 	email: string
 	password: string
+	isFiledIn?: boolean
 }
 
 //  Ui props
@@ -27,6 +28,7 @@ export interface IPropsButton
 		HTMLButtonElement
 	> {
 	children: ReactNode
+	disabled?: boolean
 	appearance: 'blue' | 'error' | 'common'
 	sizes?: 'xs' | 'sm' | 'md' | 'lg'
 	type: 'button' | 'submit' | 'reset'

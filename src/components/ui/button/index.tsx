@@ -8,10 +8,16 @@ export const ButtonUiComponent: FC<IPropsButton> = ({
 	appearance,
 	sizes,
 	type,
+	disabled,
 	...props
 }: IPropsButton): JSX.Element => {
 	return (
-		<button className={cn(style.uiBtn)} {...props} type={type}>
+		<button
+			className={cn(style.uiBtn)}
+			{...props}
+			disabled={disabled}
+			type={type}
+		>
 			{children}
 		</button>
 	)

@@ -1,7 +1,9 @@
 .uiBtn {
-	width: 100%;
-	background: #ffffff !important;
-	color: #080710;
-	border-radius: 5px;
-	padding: 6px;
+	@apply w-full text-[#080710] rounded-md p-[6px] cursor-pointer duration-700 ease-in-out;
+	background-color: #ffffff !important;
+
+	&:disabled {
+		@apply cursor-not-allowed;
+		background-color: aqua !important;
+	}
 }

@@ -12,13 +12,20 @@ export const AuthRootComponent = (): JSX.Element => {
 	const [formData, setFormData] = useState<authLoginData>({
 		email: '',
 		password: '',
+		isFiledIn: true,
 	})
 
 	const { email, password } = formData
 
 	const handleSubmitForm = async (e: { preventDefault: () => void }) => {
 		e.preventDefault()
+
 		if (!formData.email || !formData.password) return console.log('Пустые поля')
+
+		setFormData(prevState => ({
+			...prevState,
+			isFiledIn: true,
+		}))
 
 		if (location.pathname === '/login') {
 			try {
@@ -29,6 +36,7 @@ export const AuthRootComponent = (): JSX.Element => {
 					email,
 					password
 				)
+
 				if (userCredential.user) {
 					toast(`Welcome, ${userCredential.user.email}`)
 					navigate('/')
@@ -45,7 +53,7 @@ export const AuthRootComponent = (): JSX.Element => {
 					{location.pathname === '/register' ? (
 						<RegisterComponent />
 					) : location.pathname === '/login' ? (
-						<LoginComponent setFormData={setFormData} />
+						<LoginComponent setFormData={setFormData} formData={formData} />
 					) : null}
 				</form>
 			</div>
