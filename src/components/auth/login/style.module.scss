@@ -1,0 +1,24 @@
+.infoForUser {
+	@apply relative flex justify-center items-center z-10;
+
+	&::before {
+		content: '';
+		position: sticky;
+		left: 0px;
+		right: 0;
+		width: 100%;
+		margin-right: 10px;
+		border: 1px solid #ff2a76;
+		z-index: 3;
+	}
+	&::after {
+		content: '';
+		position: sticky;
+		left: 0;
+		right: 0;
+		width: 100%;
+		border: 1px solid #ff2a76;
+		z-index: 3;
+		margin-left: 10px;
+	}
+}
