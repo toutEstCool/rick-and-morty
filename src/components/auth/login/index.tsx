@@ -1,8 +1,15 @@
-export const LoginComponent = (props: any): JSX.Element => {
+export const LoginComponent = ({ setFormData, formData }: any): JSX.Element => {
+	const onChangeInputData = (e: any) => {
+		setFormData((prevState: {}) => ({
+			...prevState,
+			[e.target.id]: e.target.value,
+		}))
+	}
 	return (
-		<button type='submit'>
-			<input />
-			<input />
-		</button>
+		<>
+			<input id='email' onChange={onChangeInputData} />
+			<input id='password' onChange={onChangeInputData} />
+			<button type='submit'>Send</button>
+		</>
 	)
 }
